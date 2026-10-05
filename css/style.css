@@ -52,10 +52,10 @@ body.touch kbd { display: none; }
 .walk .chibi.v-side .lg1 { animation: swing .5s ease-in-out infinite alternate; transform-origin: 76px 149px; }
 .walk .chibi.v-side .lg2 { animation: swing .5s ease-in-out infinite alternate-reverse; transform-origin: 82px 149px; }
 .ent.noshadow .chibi .shd { display: none; }
-.ent.ghost { opacity: .55; filter: url(#wob); }
+.ent.ghost { opacity: .55; } /* bỏ filter #wob (nhiễu động, vẽ lại mỗi khung): rung bằng transform ở css/hieusuat.css */
 .ent.hang .chibi .bd, .ent.hang .chibi .lg, .ent.hang .chibi .ar { animation: none !important; }
 .ent.hang { animation: hangSway 3.4s ease-in-out infinite alternate; }
-@keyframes hangSway { from { margin-left: -3px; } to { margin-left: 3px; } }
+@keyframes hangSway { from { translate: -3px 0; } to { translate: 3px 0; } }
 @keyframes stepF { 0%, 50%, 100% { transform: translateY(0) scaleY(1); } 25% { transform: translateY(-6px) scaleY(.88); } }
 @keyframes armF { from { transform: rotate(-9deg); } to { transform: rotate(9deg); } }
 @keyframes swing { from { transform: rotate(-26deg); } to { transform: rotate(26deg); } }
@@ -76,7 +76,7 @@ body.touch kbd { display: none; }
 
 .prompt { position: absolute; left: 0; top: 0; z-index: 5000; background: var(--ink); color: var(--paper); padding: 4px 10px; border-radius: 5px;
   font-size: 14px; white-space: nowrap; animation: hover 1.2s ease-in-out infinite alternate; pointer-events: none; }
-@keyframes hover { to { margin-top: -4px; } }
+@keyframes hover { to { translate: 0 -4px; } }
 .bubble { position: absolute; left: 0; top: 0; z-index: 4999; transform: translateX(-50%); background: var(--paper); color: var(--ink);
   border: 2.5px solid var(--ink); border-radius: 8px; padding: 3px 8px; font-size: 13px; font-weight: 600; white-space: nowrap; pointer-events: none; font-style: italic; }
 .bubble::after { content: ""; position: absolute; left: 50%; bottom: -9px; margin-left: -6px; border: 6px solid transparent; border-top-color: var(--ink); }

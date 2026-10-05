@@ -300,5 +300,20 @@ G.dohoa = {};
   var enter0 = W.enter;
   W.enter = function (locId) { var r = enter0.apply(this, arguments); D.vao(G.S.loc); return r; };
   var dark0 = W.drawDark;
-  W.drawDark = function (dt) { dark0.call(this, dt); D.tick(dt || 0); };
+  W.drawDark = function (dt) { dark0.call(this, dt); D.tick(dt || 0); theoDoi(); };
+
+  // Tự giảm đồ hoạ: đang ở đồ hoạ cao mà khung hình chậm kéo dài (trung bình > 30 ms trong 5 giây liền, tab đang hiện)
+  // thì chuyển sang đồ hoạ thấp một lần và báo cho người chơi; họ vẫn bật lại được trong menu.
+  var tdT = 0, tdN = 0, tdTong = 0, tdDaGiam = false;
+  function theoDoi() {
+    var n = performance.now(), dt = tdT ? n - tdT : 0; tdT = n;
+    if (!D.cao || tdDaGiam || document.hidden || !dt || dt > 400) { tdN = tdTong = 0; return; } // bỏ qua lúc chuyển tab / tải cảnh
+    tdN++; tdTong += dt;
+    if (tdTong < 5000) return;
+    var tb = tdTong / tdN; tdN = tdTong = 0;
+    if (tb > 30) {
+      tdDaGiam = true; D.datChatLuong(false);
+      if (G.ui && G.ui.toast) G.ui.toast('Máy đang hơi chậm nên game đã <b>tự giảm đồ hoạ</b>. Bật lại trong Menu (Esc) → Đồ hoạ.', 5200);
+    }
+  }
 })();

@@ -32,7 +32,7 @@ G.DEATHS.ngan = { name: 'Đội Ngạn', img: 'por_ngan',
   var NGAY = { 1: 'mười ba', 2: 'mười bốn', 3: 'rằm' };
   L.aoDen = { hair: 'non_la', shirt: '#1E1A22', pants: '#1E1A22', shoes: '#EBCDAA', eyes: 'narrow', prop: 'lantern' };
   L.tieuPhu = { hair: 'non_la', shirt: '#7A6A4A', pants: '#4A4650', eyes: 'tired', prop: 'axe' };
-  function ma(look, k) { return '<div style="position:absolute;left:0;top:0;opacity:.62;filter:url(#wob)"><div style="position:absolute;left:0;top:0;transform:scale(.5);transform-origin:0 0">' + G.art.chibi(Object.assign({}, look, { view: 'front', eyes: 'blank', skin: '#C8D8D8' })) + '</div></div>'; }
+  function ma(look, k) { return '<div style="position:absolute;left:0;top:0;opacity:.62" class="ghostbody"><div style="position:absolute;left:0;top:0;transform:scale(.5);transform-origin:0 0">' + G.art.chibi(Object.assign({}, look, { view: 'front', eyes: 'blank', skin: '#C8D8D8' })) + '</div></div>'; }
   function nam(look, rot) { return '<div style="position:absolute;left:0;top:0;transform:scale(.5) rotate(' + (rot || 90) + 'deg);transform-origin:0 -40px">' + G.art.chibi(Object.assign({}, look, { view: 'front' })) + '</div>'; }
   C.choMo = function (S) { return S.chapter === 'ch4' && S.day === 3 && S.phase === 'dem'; };
 

@@ -1,0 +1,22 @@
+/* Hiệu suất: bỏ những thứ bắt trình duyệt vẽ lại tốn kém mỗi khung hình.
+   - Nhân vật cử động liên tục (thở, chớp mắt, tóc áo đung đưa): filter nét run #w (feTurbulence + feDisplacementMap)
+     sẽ phải tính lại cho từng nhân vật mỗi khung → bỏ filter trên nhân vật (CSS thắng thuộc tính filter="" trong SVG).
+   - Thân ma: trước dùng #wob có nhiễu động <animate> (tính lại toàn bộ nhiễu mỗi khung) → thay bằng rung transform.
+   - Cờ/vật đung đưa nằm TRONG tấm nền SVG lớn: mỗi khung vẽ lại cả tấm nền → đứng yên. */
+svg.chibi > g { filter: none; }
+
+.ghostbody, .ent.ghost .chibi { animation: maRung 2.6s ease-in-out infinite alternate; transform-origin: 50% 90%; }
+@keyframes maRung {
+  0% { transform: skewX(-2.5deg) scaleY(1); }
+  35% { transform: skewX(1.5deg) scaleY(1.025); }
+  70% { transform: skewX(-1deg) scaleY(.99); }
+  100% { transform: skewX(2.5deg) scaleY(1.015); }
+}
+
+svg.bg .sway, #bg svg .sway { animation: none; }
+
+/* đồ hoạ thấp: NPC đứng yên thì thôi cử động phụ (thở, liếc, tóc, váy); chỉ người đang đi mới động */
+#stage:not(.dh-cao) .npc:not(.walk) .chibi * { animation: none !important; }
+#stage:not(.dh-cao) .ghostbody, #stage:not(.dh-cao) .ent.ghost .chibi { animation-duration: 5s; }
+
+@media (prefers-reduced-motion: reduce) { .ghostbody, .ent.ghost .chibi { animation: none; } }

@@ -131,3 +131,10 @@ rồi mở http://localhost:8124 (bấm "Chạm để bắt đầu" để bật 
 - Tấm gỗ sơn then viền vàng như hoành phi; bên trái lá bùa an vị treo đung đưa và nén nhang cháy có khói; dòng đầu ghi chương, ngày, buổi. Nút là dải giấy bùa vàng có ô chữ son (敕 印 鐘 眼 書 門), "Chơi tiếp" đỏ chữ vàng. Bảng "Cách chơi" (`#menu.mnh`) cùng tông.
 - Nhặt thóc (`js/memory3.js`): hạt rải theo % bên trong lòng nia hình elip, không còn rơi ra ngoài.
 - Nút màn tiêu đề mang chữ riêng qua `data-chu` (續 Chơi tiếp, 生 Chơi mới, 憶 Xem lại, 卷 Chọn chương, 鐘 Âm thanh) trong ấn son vuông, cột chấm son và nét son dọc ở mép phải như lá bùa. "Chơi mới" hỏi lại bằng `G.tieude.hoi(html, co, khong)` (hộp giấy bùa trong game, trả về Promise) thay cho `confirm()` vì trình duyệt nhúng có thể chặn hộp thoại gốc.
+
+### Hiệu suất (`css/hieusuat.css`, `js/dohoa.js`)
+- Nhân vật (`svg.chibi > g`) không dùng filter nét run `#w` nữa: nhân vật cử động liên tục nên filter phải tính lại mỗi khung cho từng người.
+- Thân ma (`.ghostbody`, `.ent.ghost`) bỏ filter `#wob` (nhiễu có `<animate>`, tính lại toàn bộ mỗi khung), thay bằng rung `skewX/scaleY`.
+- Vật `.sway` nằm trong nền SVG lớn đứng yên (tránh vẽ lại cả tấm nền). `hangSway` và `hover` dùng thuộc tính `translate` thay vì `margin` (không tính lại bố cục).
+- Đồ hoạ thấp: NPC đứng yên thôi cử động phụ.
+- Tự giảm đồ hoạ: trung bình khung > 30 ms suốt 5 giây (tab đang hiện, đang ở đồ hoạ cao) thì chuyển sang thấp một lần và báo toast.

@@ -150,6 +150,6 @@ var G = window.G || (window.G = {});
         '<path d="M14,26 Q0,24 -8,36 M14,32 Q2,36 -4,48 M14,22 Q4,14 -2,10" fill="none" stroke="#0A0A10" stroke-width="4"/>' +
         '<path d="M104,24 l10,-4 l2,6 z M106,34 l10,2 l-2,6 z" fill="#C8C2B4"/></g></svg>' :
       '<svg viewBox="-50 -160 100 170" width="100" height="170" overflow="visible">' + A.vong(0, 0, 0.8, { mat: true, mau: true }) + '</svg>';
-    return '<div style="position:absolute;left:' + (nam ? -60 : -50) + 'px;top:' + (nam ? -34 : -160) + 'px;filter:url(#wob)" class="ghostbody">' + svg + '</div>';
+    return '<div style="position:absolute;left:' + (nam ? -60 : -50) + 'px;top:' + (nam ? -34 : -160) + 'px" class="ghostbody">' + svg + '</div>';
   };
 })();

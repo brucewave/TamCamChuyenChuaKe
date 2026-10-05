@@ -9,7 +9,7 @@ G.memory2 = {};
   var GA = '<svg width="60" height="56" viewBox="-30 -50 60 56" style="position:absolute;left:-30px;top:-50px;overflow:visible"><g stroke="' + INK + '" stroke-width="2.5" stroke-linejoin="round" filter="url(#w)">' +
     '<ellipse cx="0" cy="-18" rx="18" ry="14" fill="#E9E2D0"/><circle cx="14" cy="-32" r="9" fill="#E9E2D0"/><path d="M12,-42 q4,-8 8,0" fill="#B8241A"/><path d="M22,-32 l7,2 l-7,2" fill="#D9A93A"/>' +
     '<circle cx="16" cy="-33" r="3" fill="#F3EEDF" stroke-width="1.5"/><path d="M-16,-22 q-10,-12 -4,-20" fill="none"/><path d="M-4,-4 v8M6,-4 v8" stroke-width="2"/></g></svg>';
-  var BONG_MO = '<div style="position:absolute;left:-40px;top:-90px;width:80px;height:90px;opacity:.55;filter:url(#wob)">' +
+  var BONG_MO = '<div style="position:absolute;left:-40px;top:-90px;width:80px;height:90px;opacity:.55" class="ghostbody">' +
     '<svg viewBox="0 0 80 90" width="80" height="90"><path d="M20,90 Q18,40 40,30 Q62,40 60,90 Z" fill="#0A0810"/><circle cx="40" cy="22" r="14" fill="#0A0810"/><ellipse cx="66" cy="60" rx="10" ry="8" fill="#0A0810"/></svg></div>';
 
   K.enter = function () {

@@ -407,7 +407,7 @@ Object.assign(G.DEATHS, {
     G.ui.hud();
   };
   C.ghostHtml = function (nam) {
-    return '<div style="position:absolute;left:-40px;top:' + (nam ? -30 : -96) + 'px;width:80px;height:100px;filter:url(#wob)" class="ghostbody">' +
+    return '<div style="position:absolute;left:-40px;top:' + (nam ? -30 : -96) + 'px;width:80px;height:100px" class="ghostbody">' +
       '<svg viewBox="0 0 80 100" width="80" height="100">' + (nam ?
         '<path d="M6,24 q14,-16 34,-12 q26,4 34,16 q-30,10 -68,-4 z" fill="#D9C27A" opacity=".85"/><path d="M8,22 q-6,-8 0,-14" stroke="#2B1F1A" stroke-width="3" fill="none"/>' :
         '<path d="M18,100 q-4,-50 22,-64 q26,14 22,64 z" fill="#CFF6F2" opacity=".75"/><circle cx="40" cy="28" r="15" fill="#CFF6F2" opacity=".8"/><path d="M26,26 q-6,40 -2,70M54,26 q6,40 2,70" stroke="#1A2A2A" stroke-width="6" fill="none"/>') +
