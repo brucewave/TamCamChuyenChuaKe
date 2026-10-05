@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Thầy Pháp Cuối Cùng</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600;800&family=Be+Vietnam+Pro:wght@400;600;800&family=Playfair+Display:wght@700;900&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=134">
+<link rel="stylesheet" href="css/nhanvat.css?v=134">
+<link rel="stylesheet" href="css/ui2.css?v=134">
+<link rel="stylesheet" href="css/dohoa.css?v=134">
+<link rel="stylesheet" href="css/sotu.css?v=134">
+<link rel="stylesheet" href="css/sprite.css?v=134">
+<link rel="stylesheet" href="css/hoathan.css?v=134">
+  <link rel="stylesheet" href="css/tieude.css?v=134">
+<link rel="stylesheet" href="css/minigame.css?v=134">
+<link rel="stylesheet" href="css/kynang.css?v=134">
+</head>
+<body>
+<!-- defs dùng chung: nét run tay, giấy bùa, gradient -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <filter id="w" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency=".03" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="3"/>
+    </filter>
+    <filter id="wob" x="-10%" y="-30%" width="120%" height="160%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.06" numOctaves="2" seed="3" result="n">
+        <animate attributeName="baseFrequency" values="0.012 0.06;0.018 0.09;0.012 0.06" dur="6s" repeatCount="indefinite"/></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="6"/>
+    </filter>
+    <pattern id="dat" width="160" height="110" patternUnits="userSpaceOnUse"><rect width="160" height="110" fill="#C9A877"/><ellipse cx="72" cy="62" rx="32" ry="10" fill="#D6B888" opacity="0.40"/><ellipse cx="82" cy="69" rx="30" ry="7" fill="#BE9C6C" opacity="0.39"/><ellipse cx="86" cy="98" rx="27" ry="11" fill="#D2B283" opacity="0.59"/><ellipse cx="105" cy="68" rx="17" ry="6" fill="#B8956A" opacity="0.36"/><ellipse cx="30" cy="27" rx="15" ry="10" fill="#D2B283" opacity="0.50"/><ellipse cx="31" cy="26" rx="20" ry="6" fill="#B8956A" opacity="0.46"/><ellipse cx="45" cy="110" rx="34" ry="13" fill="#BE9C6C" opacity="0.43"/><ellipse cx="37" cy="32" rx="15" ry="12" fill="#D2B283" opacity="0.38"/><ellipse cx="47" cy="7" rx="14" ry="11" fill="#D6B888" opacity="0.40"/><ellipse cx="146" cy="52" rx="34" ry="9" fill="#B8956A" opacity="0.49"/><circle cx="31.8" cy="74.2" r="1.3" fill="#DCC398"/><circle cx="53.2" cy="106.0" r="2.0" fill="#A8875A"/><circle cx="21.5" cy="77.8" r="0.8" fill="#B39064"/><circle cx="127.5" cy="19.5" r="1.7" fill="#B39064"/><circle cx="81.4" cy="108.4" r="2.0" fill="#B39064"/><circle cx="103.0" cy="12.8" r="1.5" fill="#9E7E52"/><circle cx="0.1" cy="95.1" r="2.4" fill="#DCC398"/><circle cx="159.7" cy="2.2" r="1.1" fill="#A8875A"/><circle cx="6.7" cy="16.1" r="1.5" fill="#A8875A"/><circle cx="123.6" cy="36.2" r="1.3" fill="#A8875A"/><circle cx="11.9" cy="23.0" r="1.8" fill="#A8875A"/><circle cx="96.2" cy="40.9" r="1.5" fill="#B39064"/><circle cx="133.2" cy="14.9" r="1.4" fill="#9E7E52"/><circle cx="49.7" cy="25.1" r="1.8" fill="#9E7E52"/><circle cx="25.4" cy="69.2" r="1.7" fill="#B39064"/><circle cx="141.2" cy="66.4" r="1.5" fill="#A8875A"/><circle cx="17.4" cy="56.4" r="1.2" fill="#B39064"/><circle cx="41.1" cy="90.6" r="1.8" fill="#DCC398"/><circle cx="83.2" cy="102.2" r="2.4" fill="#9E7E52"/><circle cx="36.5" cy="61.5" r="2.2" fill="#A8875A"/><circle cx="44.8" cy="100.9" r="1.1" fill="#A8875A"/><circle cx="11.1" cy="45.3" r="1.2" fill="#A8875A"/><circle cx="28.2" cy="40.6" r="1.7" fill="#9E7E52"/><circle cx="14.8" cy="15.2" r="1.5" fill="#DCC398"/><circle cx="105.1" cy="76.0" r="1.7" fill="#9E7E52"/><circle cx="94.4" cy="101.6" r="1.6" fill="#DCC398"/><circle cx="112.2" cy="105.9" r="0.8" fill="#A8875A"/><circle cx="77.2" cy="80.4" r="1.3" fill="#A8875A"/><ellipse cx="15.9" cy="57.7" rx="4.0" ry="2.6" fill="#9C8C74"/><ellipse cx="15.3" cy="56.5" rx="2.2" ry="1.2" fill="#D8CCB4"/><ellipse cx="135.5" cy="75.8" rx="3.9" ry="2.5" fill="#9C8C74"/><ellipse cx="134.9" cy="74.6" rx="2.1" ry="1.2" fill="#D8CCB4"/><ellipse cx="120.0" cy="92.7" rx="3.2" ry="2.1" fill="#9C8C74"/><ellipse cx="119.4" cy="91.5" rx="1.8" ry="1.0" fill="#D8CCB4"/><ellipse cx="104.3" cy="91.4" rx="4.2" ry="2.8" fill="#9C8C74"/><ellipse cx="103.7" cy="90.2" rx="2.3" ry="1.3" fill="#D8CCB4"/><ellipse cx="65.5" cy="80.9" rx="4.2" ry="2.7" fill="#9C8C74"/><ellipse cx="64.9" cy="79.7" rx="2.3" ry="1.3" fill="#D8CCB4"/><ellipse cx="88.1" cy="65.2" rx="3.3" ry="2.1" fill="#9C8C74"/><ellipse cx="87.5" cy="64.0" rx="1.8" ry="1.0" fill="#D8CCB4"/><path d="M87,61 l4,1 l9,2" stroke="#A6845A" stroke-width="1.1" fill="none" opacity=".6"/><path d="M109,39 l8,0 l6,2" stroke="#A6845A" stroke-width="1.1" fill="none" opacity=".6"/><path d="M13,75 l4,1 l6,-2" stroke="#A6845A" stroke-width="1.1" fill="none" opacity=".6"/><path d="M105,50 l8,3 l5,-3" stroke="#A6845A" stroke-width="1.1" fill="none" opacity=".6"/></pattern>
+    <pattern id="co" width="140" height="96" patternUnits="userSpaceOnUse"><rect width="140" height="96" fill="#97A867"/><ellipse cx="42" cy="65" rx="17" ry="8" fill="#8C9E5C" opacity="0.60"/><ellipse cx="62" cy="86" rx="19" ry="12" fill="#A6B676" opacity="0.59"/><ellipse cx="113" cy="72" rx="17" ry="8" fill="#A6B676" opacity="0.57"/><ellipse cx="44" cy="13" rx="22" ry="13" fill="#889A5A" opacity="0.61"/><ellipse cx="133" cy="27" rx="17" ry="10" fill="#8C9E5C" opacity="0.68"/><ellipse cx="116" cy="37" rx="22" ry="12" fill="#A2B26E" opacity="0.50"/><ellipse cx="116" cy="27" rx="24" ry="12" fill="#8C9E5C" opacity="0.57"/><ellipse cx="43" cy="76" rx="14" ry="8" fill="#A2B26E" opacity="0.46"/><ellipse cx="108" cy="26" rx="26" ry="13" fill="#889A5A" opacity="0.53"/><path d="M88.2,64.3 q1.1,-4.8 2.8,-8.0" stroke="#6E8046" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M66.5,20.4 q-0.1,-2.4 -0.2,-4.1" stroke="#7C8E50" stroke-width="1.2" fill="none" stroke-linecap="round"/><path d="M38.1,35.8 q0.0,-4.5 0.1,-7.5" stroke="#B8C686" stroke-width="1.9" fill="none" stroke-linecap="round"/><path d="M22.3,82.1 q-0.7,-4.5 -1.7,-7.5" stroke="#AEBE7C" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M101.1,16.0 q0.3,-3.8 0.8,-6.3" stroke="#7C8E50" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M79.6,84.9 q1.1,-4.8 2.7,-8.0" stroke="#AEBE7C" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M137.5,13.1 q0.7,-5.0 1.8,-8.3" stroke="#7C8E50" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M126.0,94.2 q0.1,-5.3 0.2,-8.9" stroke="#869854" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M100.6,5.4 q-1.1,-3.9 -2.8,-6.5" stroke="#869854" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M107.6,48.8 q0.7,-2.5 1.9,-4.1" stroke="#7C8E50" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M4.9,53.0 q1.0,-4.5 2.5,-7.4" stroke="#AEBE7C" stroke-width="1.2" fill="none" stroke-linecap="round"/><path d="M72.3,70.6 q0.5,-4.9 1.1,-8.2" stroke="#AEBE7C" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M96.5,73.7 q0.1,-3.7 0.4,-6.2" stroke="#B8C686" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M73.2,81.6 q-0.5,-4.1 -1.1,-6.8" stroke="#AEBE7C" stroke-width="1.9" fill="none" stroke-linecap="round"/><path d="M121.8,60.1 q-0.9,-3.3 -2.2,-5.5" stroke="#B8C686" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M80.2,22.5 q0.0,-4.0 0.0,-6.7" stroke="#B8C686" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M75.4,8.0 q0.1,-5.2 0.3,-8.6" stroke="#B8C686" stroke-width="1.2" fill="none" stroke-linecap="round"/><path d="M13.1,19.3 q-0.1,-5.2 -0.2,-8.7" stroke="#AEBE7C" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M66.2,15.7 q0.8,-3.7 1.9,-6.2" stroke="#AEBE7C" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M15.2,42.6 q-0.6,-2.5 -1.4,-4.1" stroke="#7C8E50" stroke-width="1.1" fill="none" stroke-linecap="round"/><path d="M21.8,5.1 q0.5,-3.3 1.3,-5.4" stroke="#6E8046" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M14.7,71.2 q0.0,-2.8 0.1,-4.6" stroke="#869854" stroke-width="1.7" fill="none" stroke-linecap="round"/><path d="M98.2,84.8 q0.3,-2.5 0.8,-4.1" stroke="#B8C686" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M75.3,83.5 q-0.7,-4.0 -1.7,-6.7" stroke="#6E8046" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M85.6,82.8 q0.6,-3.1 1.4,-5.2" stroke="#869854" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M44.2,33.0 q-0.7,-5.2 -1.7,-8.6" stroke="#6E8046" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M18.8,26.0 q-0.6,-4.6 -1.4,-7.6" stroke="#7C8E50" stroke-width="1.4" fill="none" stroke-linecap="round"/><path d="M131.8,54.0 q-0.7,-4.5 -1.8,-7.5" stroke="#7C8E50" stroke-width="1.2" fill="none" stroke-linecap="round"/><path d="M79.8,36.9 q-0.3,-4.9 -0.8,-8.1" stroke="#B8C686" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M48.1,95.9 q0.7,-4.9 1.8,-8.2" stroke="#AEBE7C" stroke-width="1.2" fill="none" stroke-linecap="round"/><path d="M5.2,54.8 q0.2,-3.9 0.4,-6.6" stroke="#6E8046" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M16.1,19.9 q-0.5,-2.9 -1.3,-4.8" stroke="#7C8E50" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M18.8,66.6 q-1.0,-2.6 -2.4,-4.4" stroke="#AEBE7C" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M72.1,43.6 q-1.2,-4.2 -2.9,-7.0" stroke="#7C8E50" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M25.4,45.8 q-0.2,-4.6 -0.6,-7.7" stroke="#6E8046" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M13.3,76.9 q-1.0,-3.4 -2.5,-5.6" stroke="#AEBE7C" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M26.7,57.8 q0.6,-3.4 1.6,-5.7" stroke="#869854" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M104.2,75.6 q-0.2,-4.8 -0.6,-8.1" stroke="#869854" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M97.3,74.6 q-0.2,-4.7 -0.6,-7.8" stroke="#6E8046" stroke-width="1.2" fill="none" stroke-linecap="round"/><path d="M47.8,47.1 q-0.3,-2.4 -0.9,-4.1" stroke="#B8C686" stroke-width="1.1" fill="none" stroke-linecap="round"/><path d="M38.2,92.5 q-0.7,-3.3 -1.7,-5.5" stroke="#AEBE7C" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M74.6,39.8 q0.3,-5.4 0.9,-9.0" stroke="#7C8E50" stroke-width="1.7" fill="none" stroke-linecap="round"/><path d="M137.2,6.1 q0.6,-4.2 1.4,-7.1" stroke="#869854" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M70.7,74.0 q-1.2,-4.3 -2.9,-7.2" stroke="#869854" stroke-width="1.3" fill="none" stroke-linecap="round"/><path d="M126.8,54.6 q1.1,-3.9 2.8,-6.5" stroke="#B8C686" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M13.9,44.9 q0.1,-4.3 0.3,-7.2" stroke="#7C8E50" stroke-width="1.4" fill="none" stroke-linecap="round"/><circle cx="131.4" cy="37.0" r="1.1" fill="#E8D890"/><circle cx="119.8" cy="52.0" r="1.1" fill="#D8A8B8"/><circle cx="8.2" cy="90.7" r="1.1" fill="#F0E8C8"/><circle cx="39.8" cy="38.3" r="1.1" fill="#F0E8C8"/><circle cx="51.2" cy="27.4" r="1.1" fill="#D8A8B8"/></pattern>
+    <pattern id="nuoc" width="200" height="76" patternUnits="userSpaceOnUse"><rect width="200" height="76" fill="#6F9C9A"/><ellipse cx="54" cy="71" rx="50" ry="14" fill="#5E8A8A" opacity="0.40"/><ellipse cx="49" cy="3" rx="35" ry="14" fill="#7AA8A4" opacity="0.42"/><ellipse cx="63" cy="30" rx="47" ry="14" fill="#7AA8A4" opacity="0.42"/><ellipse cx="181" cy="33" rx="44" ry="16" fill="#5E8A8A" opacity="0.41"/><ellipse cx="20" cy="62" rx="57" ry="9" fill="#5E8A8A" opacity="0.58"/><ellipse cx="23" cy="47" rx="44" ry="10" fill="#5E8A8A" opacity="0.51"/><path d="M28,30 q6.1,-3.5 12.2,0 t12.2,0" stroke="#8DBAB4" stroke-width="1.7" fill="none" stroke-linecap="round" opacity="0.60"/><path d="M105,34 q11.2,-3.5 22.4,0 t22.4,0" stroke="#C8E4DE" stroke-width="2.0" fill="none" stroke-linecap="round" opacity="0.55"/><path d="M52,15 q8.8,-3.5 17.7,0 t17.7,0" stroke="#C8E4DE" stroke-width="2.1" fill="none" stroke-linecap="round" opacity="0.81"/><path d="M112,30 q7.2,-3.5 14.3,0 t14.3,0" stroke="#C8E4DE" stroke-width="1.9" fill="none" stroke-linecap="round" opacity="0.78"/><path d="M34,24 q6.9,-3.5 13.8,0 t13.8,0" stroke="#A8D0CA" stroke-width="1.7" fill="none" stroke-linecap="round" opacity="0.76"/><path d="M35,51 q10.0,-3.5 20.1,0 t20.1,0" stroke="#A8D0CA" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.67"/><path d="M112,13 q9.3,-3.5 18.7,0 t18.7,0" stroke="#A8D0CA" stroke-width="2.0" fill="none" stroke-linecap="round" opacity="0.87"/><path d="M29,21 q12.9,-3.5 25.7,0 t25.7,0" stroke="#8DBAB4" stroke-width="1.7" fill="none" stroke-linecap="round" opacity="0.58"/><path d="M62,55 q11.7,-3.5 23.4,0 t23.4,0" stroke="#A8D0CA" stroke-width="2.0" fill="none" stroke-linecap="round" opacity="0.68"/><circle cx="164.4" cy="63.7" r="1.2" fill="#EAF6F0" opacity=".75"/><circle cx="88.9" cy="56.8" r="0.9" fill="#EAF6F0" opacity=".75"/><circle cx="30.1" cy="11.7" r="1.2" fill="#EAF6F0" opacity=".75"/><circle cx="119.3" cy="22.1" r="1.2" fill="#EAF6F0" opacity=".75"/><circle cx="165.2" cy="14.0" r="1.1" fill="#EAF6F0" opacity=".75"/></pattern>
+    <pattern id="san" width="104" height="104" patternUnits="userSpaceOnUse"><rect x="0" y="0" width="52" height="52" fill="#D09476"/><rect x="1" y="1" width="50" height="3" fill="#DDA486" opacity=".55"/><rect x="1" y="1" width="3" height="50" fill="#DDA486" opacity=".4"/><rect x="1" y="48" width="50" height="3" fill="#A06A52" opacity=".5"/><circle cx="9.1" cy="41.8" r="0.7" fill="#A87058" opacity=".6"/><circle cx="23.1" cy="28.9" r="1.4" fill="#DCA88A" opacity=".6"/><circle cx="17.6" cy="37.6" r="0.7" fill="#A87058" opacity=".6"/><circle cx="43.2" cy="30.4" r="1.3" fill="#DCA88A" opacity=".6"/><circle cx="35.4" cy="34.1" r="0.9" fill="#A87058" opacity=".6"/><ellipse cx="30" cy="21" rx="13" ry="6" fill="#9E6A50" opacity=".22"/><rect x="52" y="0" width="52" height="52" fill="#C2866A"/><rect x="53" y="1" width="50" height="3" fill="#DDA486" opacity=".55"/><rect x="53" y="1" width="3" height="50" fill="#DDA486" opacity=".4"/><rect x="53" y="48" width="50" height="3" fill="#A06A52" opacity=".5"/><circle cx="80.9" cy="43.6" r="1.5" fill="#DCA88A" opacity=".6"/><circle cx="75.4" cy="38.7" r="0.9" fill="#DCA88A" opacity=".6"/><circle cx="66.3" cy="45.6" r="1.3" fill="#B47A60" opacity=".6"/><circle cx="67.4" cy="20.2" r="1.0" fill="#DCA88A" opacity=".6"/><circle cx="85.4" cy="29.6" r="1.4" fill="#B47A60" opacity=".6"/><ellipse cx="86" cy="27" rx="13" ry="7" fill="#9E6A50" opacity=".22"/><rect x="0" y="52" width="52" height="52" fill="#C48468"/><rect x="1" y="53" width="50" height="3" fill="#DDA486" opacity=".55"/><rect x="1" y="53" width="3" height="50" fill="#DDA486" opacity=".4"/><rect x="1" y="100" width="50" height="3" fill="#A06A52" opacity=".5"/><circle cx="8.8" cy="76.1" r="1.5" fill="#A87058" opacity=".6"/><circle cx="14.3" cy="59.4" r="0.8" fill="#DCA88A" opacity=".6"/><circle cx="45.6" cy="84.4" r="1.4" fill="#A87058" opacity=".6"/><circle cx="29.4" cy="69.8" r="1.1" fill="#DCA88A" opacity=".6"/><circle cx="8.4" cy="88.0" r="1.5" fill="#A87058" opacity=".6"/><ellipse cx="30" cy="67" rx="13" ry="6" fill="#9E6A50" opacity=".22"/><rect x="52" y="52" width="52" height="52" fill="#C48468"/><rect x="53" y="53" width="50" height="3" fill="#DDA486" opacity=".55"/><rect x="53" y="53" width="3" height="50" fill="#DDA486" opacity=".4"/><rect x="53" y="100" width="50" height="3" fill="#A06A52" opacity=".5"/><circle cx="77.5" cy="95.1" r="0.9" fill="#DCA88A" opacity=".6"/><circle cx="73.6" cy="71.2" r="1.6" fill="#B47A60" opacity=".6"/><circle cx="62.7" cy="77.5" r="1.4" fill="#A87058" opacity=".6"/><circle cx="86.7" cy="95.4" r="1.0" fill="#B47A60" opacity=".6"/><circle cx="71.7" cy="57.2" r="1.0" fill="#A87058" opacity=".6"/><path d="M0,0H104M0,52H104M0,0V104M52,0V104" stroke="#8E5C46" stroke-width="2.4" fill="none"/></pattern>
+    <pattern id="gach" width="96" height="48" patternUnits="userSpaceOnUse"><rect width="96" height="48" fill="#8A5040"/><rect x="1" y="1" width="46" height="22" rx="1.5" fill="#BE7660"/><rect x="2" y="2" width="44" height="3" fill="#D08C72" opacity=".5"/><rect x="2" y="20" width="44" height="3" fill="#8E5442" opacity=".55"/><circle cx="29" cy="12" r="1.2" fill="#8E5442" opacity=".6"/><rect x="49" y="1" width="46" height="22" rx="1.5" fill="#B9715A"/><rect x="50" y="2" width="44" height="3" fill="#D08C72" opacity=".5"/><rect x="50" y="20" width="44" height="3" fill="#8E5442" opacity=".55"/><circle cx="82" cy="11" r="1.2" fill="#8E5442" opacity=".6"/><rect x="-23" y="25" width="46" height="22" rx="1.5" fill="#A86450"/><rect x="-22" y="26" width="44" height="3" fill="#D08C72" opacity=".5"/><rect x="-22" y="44" width="44" height="3" fill="#8E5442" opacity=".55"/><circle cx="14" cy="33" r="1.2" fill="#8E5442" opacity=".6"/><rect x="25" y="25" width="46" height="22" rx="1.5" fill="#B06A54"/><rect x="26" y="26" width="44" height="3" fill="#D08C72" opacity=".5"/><rect x="26" y="44" width="44" height="3" fill="#8E5442" opacity=".55"/><circle cx="65" cy="35" r="1.2" fill="#8E5442" opacity=".6"/><rect x="73" y="25" width="46" height="22" rx="1.5" fill="#B06A54"/><rect x="74" y="26" width="44" height="3" fill="#D08C72" opacity=".5"/><rect x="74" y="44" width="44" height="3" fill="#8E5442" opacity=".55"/><circle cx="90" cy="35" r="1.2" fill="#8E5442" opacity=".6"/></pattern>
+    <pattern id="ra" width="30" height="16" patternUnits="userSpaceOnUse"><rect width="30" height="16" fill="#C9A35E"/><path d="M15.9,16 q-0.9,-7 2.3,-15" stroke="#9E7838" stroke-width="1.3" fill="none"/><path d="M9.3,16 q-1.5,-7 0.9,-15" stroke="#B8924E" stroke-width="1.3" fill="none"/><path d="M27.4,16 q1.0,-7 -2.9,-15" stroke="#9E7838" stroke-width="1.3" fill="none"/><path d="M27.3,16 q-1.9,-7 -2.3,-15" stroke="#B8924E" stroke-width="1.3" fill="none"/><path d="M10.8,16 q0.4,-7 0.6,-15" stroke="#9E7838" stroke-width="1.3" fill="none"/><path d="M17.8,16 q-1.1,-7 -1.9,-15" stroke="#DAB872" stroke-width="1.3" fill="none"/><path d="M12.1,16 q1.6,-7 2.6,-15" stroke="#9E7838" stroke-width="1.3" fill="none"/><path d="M25.6,16 q-0.1,-7 -0.6,-15" stroke="#DAB872" stroke-width="1.3" fill="none"/><path d="M19.8,16 q1.1,-7 -2.4,-15" stroke="#B8924E" stroke-width="1.3" fill="none"/><path d="M0,16 Q7,5 15,16M15,16 Q22,5 30,16" stroke="#8E6A30" stroke-width="2" fill="none"/></pattern>
+    <pattern id="lua" width="48" height="30" patternUnits="userSpaceOnUse"><rect width="48" height="30" fill="#8FA35C"/><path d="M19.2,17.5 q-1.5,-6 2.4,-13.9" stroke="#A8BC70" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M37.8,14.9 q1.7,-6 3.1,-13.4" stroke="#A8BC70" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M21.6,17.9 q-0.3,-6 3.0,-11.1" stroke="#A8BC70" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M6.9,28.5 q1.2,-6 -3.0,-12.7" stroke="#A8BC70" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M24.8,14.8 q0.3,-6 -2.6,-10.0" stroke="#7C9048" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M39.5,15.3 q-0.9,-6 1.7,-9.5" stroke="#5E7238" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M33.3,15.3 q1.0,-6 0.3,-11.5" stroke="#6E8344" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M37.9,20.7 q1.7,-6 -3.3,-13.1" stroke="#7C9048" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M1.8,20.6 q-0.0,-6 3.6,-13.8" stroke="#A8BC70" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M14.9,15.2 q-0.8,-6 -0.3,-12.6" stroke="#A8BC70" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M3.6,16.2 q0.7,-6 1.4,-12.7" stroke="#6E8344" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M31.4,14.2 q-0.5,-6 1.7,-10.2" stroke="#6E8344" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M22.0,14.2 q2.0,-6 2.4,-10.0" stroke="#7C9048" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M13.9,20.0 q0.2,-6 -1.6,-10.7" stroke="#5E7238" stroke-width="1.8" fill="none" stroke-linecap="round"/></pattern>
+    <pattern id="vangoc" width="120" height="40" patternUnits="userSpaceOnUse"><rect y="0" width="120" height="20" fill="#8B6A4A"/><path d="M0,10.7 q30,-1.7 60,0 t60,0" stroke="#76583C" stroke-width="1" fill="none" opacity=".7"/><path d="M0,6.3 q30,-0.5 60,0 t60,0" stroke="#76583C" stroke-width="1" fill="none" opacity=".7"/><path d="M0,5.3 q30,-0.8 60,0 t60,0" stroke="#76583C" stroke-width="1" fill="none" opacity=".7"/><rect y="1" width="120" height="2" fill="#A2805C" opacity=".5"/><rect y="18" width="120" height="2" fill="#5E4430"/><rect y="20" width="120" height="20" fill="#84634A"/><path d="M0,27.3 q30,-0.1 60,0 t60,0" stroke="#76583C" stroke-width="1" fill="none" opacity=".7"/><path d="M0,31.7 q30,-0.2 60,0 t60,0" stroke="#76583C" stroke-width="1" fill="none" opacity=".7"/><path d="M0,28.6 q30,-1.6 60,0 t60,0" stroke="#76583C" stroke-width="1" fill="none" opacity=".7"/><rect y="21" width="120" height="2" fill="#A2805C" opacity=".5"/><rect y="38" width="120" height="2" fill="#5E4430"/><ellipse cx="34" cy="9" rx="4" ry="2" fill="#6A4E36"/><path d="M78,20 V40" stroke="#5E4430" stroke-width="1.6"/><path d="M18,0 V20" stroke="#5E4430" stroke-width="1.6"/></pattern>
+    <radialGradient id="gShd"><stop offset="0" stop-color="#1A0E08" stop-opacity=".55"/><stop offset=".6" stop-color="#1A0E08" stop-opacity=".28"/><stop offset="1" stop-color="#1A0E08" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gHead" cx=".36" cy=".3" r=".78"><stop offset="0" stop-color="#FFF4E0" stop-opacity=".38"/><stop offset=".45" stop-color="#FFF4E0" stop-opacity="0"/><stop offset=".78" stop-color="#5A2A18" stop-opacity=".06"/><stop offset="1" stop-color="#5A2A18" stop-opacity=".32"/></radialGradient>
+    <linearGradient id="gBody" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF4E0" stop-opacity=".22"/><stop offset=".4" stop-color="#FFF4E0" stop-opacity="0"/><stop offset=".75" stop-color="#1A0E08" stop-opacity=".1"/><stop offset="1" stop-color="#1A0E08" stop-opacity=".36"/></linearGradient>
+    <linearGradient id="gNeck" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3A1A10" stop-opacity=".35"/><stop offset="1" stop-color="#3A1A10" stop-opacity="0"/></linearGradient>
+    <radialGradient id="glowY"><stop offset="0" stop-color="#FFD98A" stop-opacity=".9"/><stop offset="1" stop-color="#FFD98A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="moonG"><stop offset="0" stop-color="#F4EBD0"/><stop offset=".7" stop-color="#E6D9B0"/><stop offset="1" stop-color="#E6D9B0" stop-opacity="0"/></radialGradient>
+  </defs>
+</svg>
+
+<div id="stage">
+  <div id="world"><div id="bg"></div><div id="ents"></div><div id="fg"></div></div>
+  <canvas id="dark" width="960" height="540"></canvas>
+  <div id="tint"></div>
+  <div id="soi"></div>
+  <div id="mi" aria-hidden="true"><i class="mi-t"></i><i class="mi-d"></i></div>
+  <div id="vignette"></div>
+
+  <div id="hud">
+    <div id="hud-left">
+      <div id="hud-where"><span id="hud-day"></span><span class="dot" aria-hidden="true">·</span><span id="hud-loc"></span></div>
+      <div id="objective" role="status" aria-live="polite"></div>
+    </div>
+    <div id="hud-right">
+      <div class="hud-btns">
+        <button id="btn-note" class="ibtn" aria-label="Mở Sổ Tử (phím J)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/><path d="M9 8h6"/></g></svg><span>Sổ Tử</span><kbd>J</kbd><i id="note-badge" hidden></i></button>
+        <button id="btn-music" class="ibtn sq" aria-label="Bật hoặc tắt âm thanh" aria-pressed="true"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 0 1 0 6"/><path d="M18.5 6.5a8 8 0 0 1 0 11"/></g></svg></button>
+        <button id="btn-menu" class="ibtn sq" aria-label="Menu (phím Esc)"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></g></svg></button>
+      </div>
+      <div id="hud-inv" hidden></div>
+    </div>
+  </div>
+  <div id="tools" role="toolbar" aria-label="Đồ nghề thầy pháp">
+    <button id="btn-bowl" class="tool" aria-label="Mở mắt âm dương (phím B)" aria-pressed="false" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="M12 9a3 3 0 0 0 0 6z" fill="currentColor"/></g></svg><span>Âm dương</span><kbd>B</kbd><i class="hoi" aria-hidden="true"></i></button>
+    <button id="btn-gao" class="tool" aria-label="Rắc gạo muối (phím G)" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 14c0-4 3-7 7-7s7 3 7 7"/><path d="M4 14h16l-2 5H6z"/><path d="M9 10l.5 1M12 9v1M15 10l-.5 1"/></g></svg><span>Gạo muối</span><kbd>G</kbd><i class="cnt" id="gao-cnt"></i></button>
+    <button id="btn-chuong" class="tool" aria-label="Lắc chuông (phím C)" hidden><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 20a2 2 0 0 0 4 0"/></g></svg><span>Chuông</span><kbd>C</kbd></button>
+    <button id="btn-chay" class="tool" aria-label="Chạy (giữ Shift)" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="4.5" r="1.8"/><path d="M8 21l3-6 3 2 1 4"/><path d="M6 12l3-3 4 1 3 3 3 1"/><path d="M11 15l2-5"/></g></svg><span>Chạy</span><kbd>Shift</kbd></button>
+  </div>
+  <button id="edge-l" class="edge" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button id="edge-r" class="edge" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  <button id="btn-act" aria-label="Tương tác">●</button>
+
+  <div id="closeup" hidden></div>
+  <div id="dialog" class="panel" role="dialog" aria-live="polite" hidden></div>
+  <div id="mg" class="panel big" hidden></div>
+  <div id="notebook" class="panel big nb" hidden></div>
+  <div id="menu" class="panel" hidden></div>
+  <div id="card" hidden></div>
+  <div id="toasts" role="status" aria-live="polite"></div>
+  <div id="fade"></div>
+
+  <div id="cine" hidden></div>
+
+  <div id="title" hidden>
+    <div id="cover"></div>
+    <div class="tbox">
+      <div class="seal">SỔ<br>TỬ</div>
+      <h1 id="title-h"></h1>
+      <p id="title-sub"></p>
+      <button id="btn-continue" class="primary" data-chu="續" hidden>Chơi tiếp</button>
+      <button id="btn-new" data-chu="生">Chơi mới</button>
+      <button id="btn-replay" data-chu="憶">Xem lại đoạn mở đầu</button>
+      <button id="btn-jump" data-chu="卷">Chọn chương (chơi thử)</button>
+      <button class="music-toggle" data-chu="鐘">♪ Âm thanh: Bật</button>
+    </div>
+  </div>
+
+  <div id="jump" class="panel" hidden></div>
+  <div id="tap" class="tapstart"><div><b>Chạm để bắt đầu</b><small>Nên đeo tai nghe</small></div></div>
+</div>
+<div id="rotate">Xoay ngang điện thoại để chơi</div>
+
+<script src="js/core.js?v=134"></script>
+<script src="js/audio.js?v=134"></script>
+<script src="js/nhac.js?v=134"></script>
+<script src="js/art.js?v=134"></script>
+<script src="js/xac.js?v=134"></script>
+<script src="js/sprite.js?v=134"></script>
+<script src="js/ve.js?v=134"></script>
+<script src="js/scenes.js?v=134"></script>
+<script src="js/path.js?v=134"></script>
+<script src="js/world.js?v=134"></script>
+<script src="js/ui.js?v=134"></script>
+<script src="js/closeups.js?v=134"></script>
+<script src="js/notebook.js?v=134"></script>
+<script src="js/minigames.js?v=134"></script>
+<script src="js/cine.js?v=134"></script>
+<script src="js/memory.js?v=134"></script>
+<script src="js/memory2.js?v=134"></script>
+<script src="js/scenes2.js?v=134"></script>
+<script src="js/danger.js?v=134"></script>
+<script src="js/minigames2.js?v=134"></script>
+<script src="js/closeups2.js?v=134"></script>
+<script src="js/prologue.js?v=134"></script>
+<script src="js/ch1.js?v=134"></script>
+<script src="js/scenes3.js?v=134"></script>
+<script src="js/closeups3.js?v=134"></script>
+<script src="js/memory3.js?v=134"></script>
+<script src="js/ch2.js?v=134"></script>
+<script src="js/scenes4.js?v=134"></script>
+<script src="js/closeups4.js?v=134"></script>
+<script src="js/memory4.js?v=134"></script>
+<script src="js/ch3.js?v=134"></script>
+<script src="js/scenes5.js?v=134"></script>
+<script src="js/closeups5.js?v=134"></script>
+<script src="js/ch4.js?v=134"></script>
+<script src="js/closeups6.js?v=134"></script>
+<script src="js/closeups7.js?v=134"></script>
+<script src="js/ch5.js?v=134"></script>
+<script src="js/vatpham.js?v=134"></script>
+<script src="js/bieucam.js?v=134"></script>
+<script src="js/decor.js?v=134"></script>
+<script src="js/cutscene.js?v=134"></script>
+<script src="js/phimchet.js?v=134"></script>
+<script src="js/hoathan.js?v=134"></script>
+<script src="js/kinhdi.js?v=134"></script>
+<script src="js/tuongtac.js?v=134"></script>
+<script src="js/bando.js?v=134"></script>
+<script src="js/dohoa.js?v=134"></script>
+<script src="js/thoigian.js?v=134"></script>
+<script src="js/kynang.js?v=134"></script>
+<script src="js/tieude.js?v=134"></script>
+<script src="js/main.js?v=134"></script>
+<script src="js/jump.js?v=134"></script>
+</body>
+</html>

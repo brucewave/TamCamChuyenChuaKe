@@ -1,0 +1,96 @@
+/* Sổ Tử: cuốn sổ âm phủ. Giấy dó ố kẻ cột son, bìa sơn then chữ vàng, dấu son, dải lụa hắc bạch đánh dấu trang.
+   Dấu chìm "Sinh Tử Bộ" sau bìa là mối nối về sau: sổ của Đăng là một trang rời của sổ Diêm Vương. */
+.nb { --giay: #EADCB8; --giay2: #E0CFA4; --son: #B0241A; --muc: #2B1F1A; position: relative; overflow: hidden !important; padding: 0 0 12px !important; max-height: 524px !important;
+  background:
+    radial-gradient(ellipse 60% 40% at 92% 96%, rgba(120,80,30,.22), transparent 70%),
+    radial-gradient(ellipse 40% 30% at 4% 30%, rgba(120,80,30,.14), transparent 70%),
+    repeating-linear-gradient(90deg, transparent 0 46px, rgba(176,36,26,.13) 46px 47.5px),
+    linear-gradient(180deg, var(--giay), var(--giay2)) !important;
+  border: 3px solid #1A0E08 !important; border-radius: 4px 10px 10px 4px !important;
+  box-shadow: inset 10px 0 18px -10px rgba(60,30,10,.55), 0 14px 0 rgba(0,0,0,.45), 0 0 0 5px #3A1E14 !important; }
+.nb > *:not(.nb-bia) { margin-left: 20px; margin-right: 20px; }
+
+/* bìa trên: dải sơn then, chữ thếp vàng */
+.nb-bia { position: relative; flex: none; display: flex; align-items: baseline; gap: 10px; padding: 6px 20px 6px 22px; margin-bottom: 8px;
+  background: linear-gradient(180deg, #2A1812, #160C08); border-bottom: 3px solid #C8962E; border-radius: 1px 7px 0 0; overflow: visible; }
+.nb-bia h2 { margin: 0; font-family: "Grenze Gotisch", serif; font-size: 27px; font-weight: 800; letter-spacing: 1px; color: #E8C05A; text-shadow: 0 2px 0 #000, 0 0 12px rgba(232,192,90,.25); display: block !important; }
+.nb-bia small { color: #B8A47C; font-size: 13px; font-style: italic; }
+.nb-bia .nb-dau { position: absolute; right: 74px; top: 8px; transform: rotate(-6deg); }
+.nb-chim { position: absolute; left: 50%; top: 50%; translate: -50% -50%; font: 900 34px "Playfair Display", serif; letter-spacing: 14px; color: #C8962E; opacity: var(--stb, .04); transition: opacity 1.2s;
+  border: 3px double currentColor; padding: 0 14px; white-space: nowrap; pointer-events: none; }
+/* dải lụa hắc bạch đánh dấu trang */
+.nb-dai { position: absolute; top: 0; width: 14px; height: 84px; z-index: 2; clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 86%, 0 100%); box-shadow: inset -3px 0 0 rgba(0,0,0,.25); }
+.nb-dai.hac { right: 26px; background: #141010; }
+.nb-dai.bach { right: 44px; height: 68px; background: #F2EEE4; box-shadow: inset -3px 0 0 rgba(0,0,0,.12); }
+
+/* dấu son vuông */
+.nb-dau { display: inline-grid; grid-template-columns: repeat(2, auto); gap: 0 2px; padding: 3px 4px; border: 2.5px solid var(--m); color: var(--m); border-radius: 3px;
+  font: 900 11px/1.05 "Be Vietnam Pro", sans-serif; letter-spacing: .5px; text-align: center; background: rgba(255,255,255,.05);
+  box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.08); filter: url(#w); opacity: .92; }
+.nb-dau i { font-style: normal; }
+
+/* thẻ */
+.nb .tabs { border-bottom: 2px solid rgba(43,31,26,.5) !important; }
+.nb .tabs button { background: rgba(255,250,236,.6); }
+.nb .tabs button.on { background: var(--muc) !important; color: #E8C05A !important; }
+.nb .col h3 { display: flex; align-items: center; gap: 6px; color: #6A4A2A !important; }
+.nb-ico { width: 16px; height: 16px; display: inline-block; background: center / contain no-repeat; }
+.nb-ico.l { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M2 3h12v8H7l-3 3v-3H2z' fill='%23E8D8B0' stroke='%232B1F1A' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M5 6h6M5 8.5h4' stroke='%23B0241A' stroke-width='1.3'/%3E%3C/svg%3E"); }
+.nb-ico.v { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 6l5-4h6v12H8z' fill='%23E8D8B0' stroke='%232B1F1A' stroke-width='1.5' stroke-linejoin='round'/%3E%3Ccircle cx='7.5' cy='6' r='1.3' fill='%232B1F1A'/%3E%3Cpath d='M7.5 6Q4 9 2 13' fill='none' stroke='%23B0241A' stroke-width='1.2'/%3E%3C/svg%3E"); }
+
+/* lời khai: phiếu giấy có dấu ngoặc mực; vật chứng: thẻ treo có lỗ xâu dây */
+.nb .card { background: #F6EED8 !important; border: 1.5px solid rgba(43,31,26,.7) !important; box-shadow: 2px 3px 0 rgba(60,30,10,.18); padding-left: 28px !important; }
+.nb .card::before { position: absolute; left: 8px; top: 7px; }
+.nb .card.loi::before { content: "“"; font: 900 26px/1 "Playfair Display", serif; color: var(--son); top: 4px; }
+.nb .card.vat { border-radius: 4px 12px 12px 4px !important; }
+.nb .card.vat::before { content: ""; width: 9px; height: 9px; border-radius: 50%; border: 2px solid var(--muc); background: #E0CFA4; top: 10px; }
+.nb .card.used.loi::before, .nb .card.used.vat::before { content: "✓"; font: 800 14px/1 "Be Vietnam Pro", sans-serif; color: #3E7A52; border: none; background: none; width: auto; height: auto; top: 10px; }
+.nb .card:hover { background: #FFF8E6 !important; }
+.nb .card.sel { background: #F6DCC0 !important; box-shadow: 0 0 0 2.5px var(--son), 3px 4px 0 rgba(60,30,10,.2) !important; }
+.nb .card.new::after { content: "mới"; position: absolute; top: -8px; right: 8px; background: var(--son); color: #FFF2D8; font-size: 10px; padding: 0 6px; border-radius: 2px; }
+.nb .bar { position: static !important; flex: none; background: transparent !important; border-top: 2px dashed rgba(43,31,26,.4) !important; margin-top: 8px !important; padding-top: 8px !important; }
+.nb .tabs { flex: none; }
+.nb .cols { flex: 1 1 auto; min-height: 120px; }
+.nb .col { min-height: 0; }
+.nb .colbody { flex: 1; max-height: none !important; min-height: 0; }
+.nb .result { flex: none; margin-top: 8px !important; max-height: 96px; overflow: auto; }
+.nb .close { flex: none; width: calc(100% - 40px) !important; }
+.nb .pages { flex: 1 1 auto; min-height: 0; max-height: none !important; }
+
+/* kết quả đối chiếu: dấu son đóng xuống */
+.nb .result { display: flex; gap: 12px; align-items: flex-start; background: #1E1410 !important; color: #EADCB8 !important; border-left: 4px solid #C8962E; }
+.nb .result.ok .nb-dau { --m: #E05040; flex: none; animation: dauDong .45s cubic-bezier(.2,1.6,.4,1) both; }
+@keyframes dauDong { from { transform: scale(2.4) rotate(-14deg); opacity: 0; } to { transform: rotate(-6deg); opacity: .92; } }
+
+/* trang người chết */
+.nb .page { display: grid !important; grid-template-columns: 150px 1fr !important; gap: 16px !important; position: relative; padding: 14px !important;
+  background: linear-gradient(180deg, rgba(255,250,236,.55), rgba(255,250,236,.25)) !important; border: 1.5px solid rgba(43,31,26,.55) !important; box-shadow: 2px 4px 0 rgba(60,30,10,.15); overflow: hidden; }
+.nb .page::after { content: "SINH TỬ BỘ"; position: absolute; right: -18px; bottom: 18px; rotate: -16deg; font: 900 26px "Playfair Display", serif; letter-spacing: 6px;
+  color: var(--son); opacity: calc(var(--stb, .04) * .8); border: 3px double currentColor; padding: 0 10px; pointer-events: none; }
+.nb-trai { display: flex; flex-direction: column; gap: 8px; }
+.anhtho { width: 150px; height: 190px; display: block; filter: drop-shadow(0 4px 4px rgba(0,0,0,.3)); }
+.anhtho .at-nguoi { filter: sepia(.55) saturate(.7) contrast(1.05); }
+.anhtho .at-nguoi.mo { filter: sepia(.75) saturate(.45) brightness(.95); }
+.anhtho .at-khoi { animation: atKhoi 3.4s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes atKhoi { from { transform: skewX(-8deg); opacity: .35; } to { transform: skewX(8deg); opacity: .7; } }
+.nb .page .por { position: relative; height: 84px !important; border: 2px solid #3A1E14 !important; border-radius: 3px !important; }
+.nb .page .por svg { filter: sepia(.35) contrast(1.05); }
+.nb .page .por span { position: absolute; left: 0; right: 0; bottom: 0; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #EADCB8; background: rgba(20,12,8,.7); text-align: center; padding: 1px 0; }
+.nb-noi { position: relative; }
+.nb-so { font: 700 11px "Be Vietnam Pro", sans-serif; letter-spacing: 2px; color: var(--son); text-transform: uppercase; margin-bottom: 2px; }
+.nb-noi > .nb-dau { position: absolute; right: 0; top: 0; transform: rotate(8deg); font-size: 12px; }
+.nb .page h4 { font-family: "Playfair Display", serif; font-size: 21px !important; font-weight: 900; margin: 0 0 6px !important; color: var(--muc); border-bottom: 1.5px solid rgba(176,36,26,.4); padding-bottom: 4px; padding-right: 60px; }
+.nb .page .meta { color: #3A2A1E !important; }
+.nb .page .verdict { border: 2px solid var(--son) !important; color: var(--son) !important; background: rgba(176,36,26,.06); border-radius: 2px !important; }
+
+@media (prefers-reduced-motion: reduce) { .anhtho .at-khoi, .nb .result.ok .nb-dau { animation: none; } }
+
+/* dấu chìm Sinh Tử Bộ: rõ dần qua các chương; dòng "Âm ty · Diêm La điện" chỉ đọc được ở chương cuối */
+.nb-chim { display: flex; flex-direction: column; align-items: center; line-height: 1.05; }
+.nb-chim small { font: 700 9px "Be Vietnam Pro", sans-serif; letter-spacing: 6px; opacity: 0; }
+#notebook.stb-ro .nb-chim { color: #E05040; text-shadow: 0 0 10px rgba(224,80,64,.6); }
+#notebook.stb-ro2 .nb-chim small { opacity: .9; }
+#notebook.stb-ro2 .nb-chim { animation: stbTho 4s ease-in-out infinite alternate; }
+@keyframes stbTho { to { text-shadow: 0 0 18px rgba(255,90,60,.85); } }
+#notebook.stb-ro .page::after { color: #8A0E08; }
+@media (prefers-reduced-motion: reduce) { #notebook.stb-ro2 .nb-chim { animation: none; } }

@@ -1,0 +1,119 @@
+/* Hiệu ứng kỹ năng (js/kynang.js). Chỉ animate opacity / transform / translate; không mix-blend-mode, không filter trên lớp toàn màn. */
+
+/* ---------- 1. mắt âm dương ---------- */
+/* màu thủy mặc xanh âm phủ lên thế giới (thay cho filter trên #world: quá nặng) */
+#kn-am { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .7s ease;
+  background: radial-gradient(ellipse 70% 62% at 50% 50%, rgba(60,120,128,.06), rgba(6,26,34,.42) 100%),
+    linear-gradient(180deg, rgba(28,66,76,.36), rgba(16,40,50,.40)); }
+#stage.soi #kn-am { opacity: 1; }
+/* viền tối xanh lạnh thay cho viền đỏ cũ */
+#soi { background: radial-gradient(ellipse 80% 76% at 50% 48%, rgba(20,60,66,0) 42%, rgba(8,34,42,.4) 74%, rgba(2,10,16,.86) 100%); }
+#stage.mat-mo #soi::after { background: radial-gradient(ellipse 80% 76% at 50% 48%, transparent 60%, rgba(90,230,220,.14) 82%, transparent 98%); }
+/* dấu vô hình: viền sáng xanh ngọc */
+#stage.soi .hid { opacity: 1; filter: drop-shadow(0 0 3px rgba(200,255,250,.95)) drop-shadow(0 0 9px rgba(90,230,230,.75)); }
+
+#kn-mat { position: absolute; inset: 0; pointer-events: none; overflow: hidden; opacity: 0; transition: opacity .45s ease; }
+#stage.mat-mo #kn-mat { opacity: 1; }
+#kn-mat > * { position: absolute; display: block; }
+/* mống mắt: vân toả tròn ở mép, giữa trong suốt */
+#kn-mat .mong { left: 50%; top: 50%; width: 1320px; height: 720px; margin: -360px 0 0 -660px; border-radius: 50%; will-change: transform;
+  background: radial-gradient(ellipse closest-side, transparent 66%, rgba(110,220,215,.16) 74%, rgba(8,40,46,.5) 90%, rgba(2,12,16,.9) 100%),
+    repeating-conic-gradient(from 0deg, rgba(140,235,228,.13) 0deg .7deg, transparent .7deg 3.1deg, rgba(10,50,56,.18) 3.1deg 3.6deg, transparent 3.6deg 5.3deg);
+  -webkit-mask-image: radial-gradient(ellipse closest-side, transparent 60%, #000 80%); mask-image: radial-gradient(ellipse closest-side, transparent 60%, #000 80%);
+  animation: knTho 3.2s ease-in-out infinite alternate; }
+#kn-mat.kn-nhip .mong { animation: knMong 1.5s cubic-bezier(.2,.75,.25,1), knTho 3.2s ease-in-out 1.5s infinite alternate; }
+@keyframes knMong { from { transform: rotate(-28deg) scale(1.35); opacity: 0; } 35% { opacity: 1; } to { transform: rotate(0) scale(1); } }
+@keyframes knTho { from { transform: scale(1); } to { transform: scale(1.025); } }
+/* nhịp mở mắt: một vòng sáng loang ra từ giữa */
+#kn-mat .nhip { left: 50%; top: 48%; width: 160px; height: 120px; margin: -60px 0 0 -80px; border-radius: 50%; opacity: 0;
+  border: 3px solid rgba(180,255,245,.85); box-shadow: 0 0 18px rgba(120,255,240,.7), inset 0 0 14px rgba(120,255,240,.5); }
+#kn-mat.kn-nhip .nhip { animation: knNhip 1s cubic-bezier(.15,.7,.3,1) forwards; }
+@keyframes knNhip { from { transform: scale(.2); opacity: 1; } to { transform: scale(9); opacity: 0; } }
+#kn-mat .taiji { left: 50%; top: 48%; width: 150px; height: 150px; margin: -75px 0 0 -75px; opacity: 0; }
+#kn-mat .taiji svg { width: 100%; height: 100%; display: block; }
+#kn-mat.kn-nhip .taiji { animation: knTaiji 1.1s ease-out forwards; }
+@keyframes knTaiji { from { transform: scale(.5) rotate(0); opacity: 0; } 25% { opacity: .55; } to { transform: scale(1.7) rotate(200deg); opacity: 0; } }
+/* mỏi mắt: gân đỏ bò vào, viền đỏ đập theo tim */
+#kn-mat .mach { inset: 0; opacity: 0; transition: opacity 1.2s ease;
+  background: radial-gradient(ellipse 78% 74% at 50% 48%, transparent 55%, rgba(140,20,30,.28) 82%, rgba(60,0,8,.6) 100%); }
+#kn-mat .mach svg { width: 100%; height: 100%; display: block; }
+#stage.kn-moi #kn-mat .mach { opacity: 1; animation: knTim .85s ease-in-out infinite; }
+@keyframes knTim { 0%, 100% { opacity: .65; } 12% { opacity: 1; } 26% { opacity: .75; } 36% { opacity: .95; } }
+/* giây cuối: mi mắt trĩu xuống, chớp chớp */
+#stage.kn-moi2 #mi:not(.chop) i { opacity: 1; animation: knSup 1.05s ease-in-out infinite; }
+#stage.kn-moi2 #mi:not(.chop) .mi-d { animation-name: knSupD; }
+@keyframes knSup { 0%, 100% { transform: translateY(-100%); } 40% { transform: translateY(-76%); } 55% { transform: translateY(-83%); } 70% { transform: translateY(-74%); } }
+@keyframes knSupD { 0%, 100% { transform: translateY(100%); } 40% { transform: translateY(78%); } 55% { transform: translateY(85%); } 70% { transform: translateY(76%); } }
+
+/* ---------- 2. gạo muối ---------- */
+.ent.kn-nem .fl { animation: knNem .38s ease-out; }
+@keyframes knNem { 0% { translate: 0 0; } 30% { translate: calc(var(--kx, 0) * 7px) calc(var(--ky, 0) * 4px - 2px); } 100% { translate: 0 0; } }
+/* vong trúng gạo muối: giật nảy, nhấp nháy, loá trắng xanh */
+.ghostent.kn-xeo .fl { animation: knGiat .6s linear; }
+@keyframes knGiat { 0% { translate: 0 0; opacity: 1; } 10% { translate: 5px -3px; opacity: .35; } 20% { translate: -6px 1px; opacity: 1; } 30% { translate: 4px 2px; opacity: .5; }
+  45% { translate: -3px -1px; opacity: 1; } 60% { translate: 2px 0; opacity: .7; } 100% { translate: 0 0; opacity: 1; } }
+.ghostent.kn-xeo .fl::after { content: ""; position: absolute; left: -48px; top: -118px; width: 96px; height: 128px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(ellipse, rgba(235,255,255,.85), rgba(140,230,255,.35) 42%, transparent 70%); animation: knLoa .6s ease-out forwards; }
+@keyframes knLoa { from { opacity: 1; transform: scale(.7); } to { opacity: 0; transform: scale(1.25); } }
+
+/* ---------- 3. chuông ---------- */
+.kn-chuong { position: absolute; left: 0; top: 0; width: 0; height: 0; pointer-events: none; }
+.kn-chuong .kc-day { position: absolute; left: -15px; top: -160px; width: 30px; height: 45px; transform-origin: 50% 0;
+  animation: knLac 1.35s ease-out forwards; }
+.kn-chuong svg { display: block; overflow: visible; }
+.kn-chuong .kc-qua { transform-box: view-box; transform-origin: 20px 30px; animation: knQua 1.35s ease-out; }
+@keyframes knLac { 0% { transform: translateY(6px) rotate(0); opacity: 0; } 8% { transform: translateY(0) rotate(26deg); opacity: 1; } 24% { transform: rotate(-22deg); }
+  40% { transform: rotate(15deg); } 56% { transform: rotate(-9deg); } 70% { transform: rotate(5deg); opacity: 1; } 84% { transform: rotate(-2deg); } 100% { transform: translateY(-4px) rotate(0); opacity: 0; } }
+@keyframes knQua { 0% { transform: rotate(0); } 12% { transform: rotate(-30deg); } 28% { transform: rotate(26deg); } 44% { transform: rotate(-18deg); } 60% { transform: rotate(11deg); } 76% { transform: rotate(-5deg); } 100% { transform: rotate(0); } }
+/* không khí gợn quanh tiếng chuông */
+.kn-ngan { position: absolute; width: 760px; height: 760px; margin: -380px 0 0 -380px; border-radius: 50%; pointer-events: none; opacity: 0; will-change: transform, opacity;
+  background: repeating-radial-gradient(circle, rgba(255,220,140,0) 0 22px, rgba(255,226,150,.13) 27px, rgba(255,220,140,0) 32px),
+    radial-gradient(circle, rgba(255,214,140,.16), transparent 62%);
+  -webkit-mask-image: radial-gradient(circle, #000 30%, transparent 70%); mask-image: radial-gradient(circle, #000 30%, transparent 70%);
+  animation: knNgan .95s ease-out forwards; }
+@keyframes knNgan { from { transform: scale(.25); opacity: 0; } 20% { opacity: 1; } to { transform: scale(1.2); opacity: 0; } }
+
+/* ---------- 5. độn thổ ---------- */
+.kn-bua { position: absolute; left: 0; top: 0; width: 0; height: 0; pointer-events: none; }
+.kn-bua .kb-hao { position: absolute; left: -60px; top: -262px; width: 120px; height: 200px; border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255,214,120,.75), rgba(255,170,60,.28) 45%, transparent 70%); animation: knHao 1.1s ease-out forwards; }
+@keyframes knHao { 0% { opacity: 0; transform: scale(.5); } 22% { opacity: 1; transform: scale(1.1); } 40% { opacity: .8; transform: scale(1); } 80% { opacity: .9; } 100% { opacity: 0; transform: scale(1.15); } }
+.kn-bua .kb-giay { position: absolute; left: -20px; top: -222px; width: 40px; height: 120px; overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, #000 49.2%, transparent 50.6%); mask-image: linear-gradient(to bottom, #000 49.2%, transparent 50.6%);
+  -webkit-mask-size: 100% 220%; mask-size: 100% 220%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: 0 0; mask-position: 0 0;
+  animation: knBuaHien .3s cubic-bezier(.2,.8,.3,1.2) both, knChay .75s linear .3s forwards; }
+.kn-bua .kb-giay svg { width: 100%; height: 100%; display: block; }
+@keyframes knBuaHien { from { transform: translateY(14px) scale(.6); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes knChay { from { -webkit-mask-position: 0 0; mask-position: 0 0; } to { -webkit-mask-position: 0 100%; mask-position: 0 100%; } }
+/* mép cháy: than đỏ, giấy sém nâu lan lên trước ngọn lửa */
+.kn-bua .kb-than { position: absolute; inset: 0; transform: translateY(10%);
+  background: linear-gradient(to top, transparent 0, #FFE9A0 1.2%, #FF8A1E 2.6%, #3A1A08 5%, rgba(70,32,10,.8) 8.5%, rgba(130,70,20,.35) 15%, transparent 23%);
+  animation: knThan .75s linear .3s forwards; }
+@keyframes knThan { from { transform: translateY(10%); } to { transform: translateY(-110%); } }
+/* đất nứt thành vòng quanh chân */
+.kn-nut { position: absolute; left: 0; top: 0; width: 0; height: 0; pointer-events: none; }
+.kn-nut svg { position: absolute; left: -100px; top: -45px; overflow: visible; }
+.kn-nut path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.kn-nut .kn-ho { fill: rgba(16,10,6,.75); transform: scale(0); transform-box: fill-box; transform-origin: center; }
+.kn-nut .kn-sang { opacity: .55; }
+.kn-nut.mo path { animation: knNut .45s cubic-bezier(.2,.7,.3,1) forwards; }
+.kn-nut.mo .kn-sang { animation: knNutSang 1.2s ease-out forwards; }
+.kn-nut.mo .kn-ho { animation: knHo .7s ease-in .15s forwards; }
+@keyframes knNut { to { stroke-dashoffset: 0; } }
+@keyframes knNutSang { 0% { opacity: .9; } 100% { opacity: .25; } }
+@keyframes knHo { to { transform: scale(1); } }
+/* người chìm xuống: cắt ngang ở mặt đất rồi tụt dần */
+.ent.kn-chim { clip-path: polygon(-240px -420px, 240px -420px, 240px 3px, -240px 3px); }
+.ent.kn-chim .fl { animation: knChim .75s cubic-bezier(.55,0,.9,.55) forwards; }
+@keyframes knChim { 0% { translate: 0 0; } 12% { translate: 0 -5px; } 30% { translate: 1px 14px; } 45% { translate: -1px 30px; } 100% { translate: 0 118px; } }
+.dun-fx .dun-khoi { animation-delay: .4s; animation-fill-mode: both; }
+
+@media (prefers-reduced-motion: reduce) {
+  #kn-mat .mong, #kn-mat.kn-nhip .mong, #kn-mat.kn-nhip .nhip, #kn-mat.kn-nhip .taiji, #stage.kn-moi #kn-mat .mach,
+  #stage.kn-moi2 #mi:not(.chop) i, .ent.kn-nem .fl, .ghostent.kn-xeo .fl, .kn-chuong .kc-day, .kn-chuong .kc-qua, .kn-ngan,
+  .kn-bua .kb-hao, .kn-bua .kb-giay, .kn-bua .kb-than, .kn-nut.mo path, .ent.kn-chim .fl { animation: none !important; }
+  #stage.kn-moi2 #mi:not(.chop) i { opacity: 0; }
+  .kn-ngan { display: none; }
+  .kn-nut path { stroke-dashoffset: 0; }
+  .kn-bua .kb-hao { opacity: .6; }
+}

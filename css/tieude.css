@@ -1,0 +1,118 @@
+/* Màn tiêu đề: trăng máu, bùa trấn, máu nhỏ giọt; nút bấm là những dải giấy bùa vàng viền son */
+#title { background: #07040A; }
+#cover .td-dang { position: absolute; left: 418px; top: 286px; transform: scale(1.05); filter: brightness(.55) saturate(.6) sepia(.3); }
+#cover .td-dang svg { width: 160px; height: 190px; }
+.td-may { animation: tdMay 30s ease-in-out infinite alternate; }
+@keyframes tdMay { to { transform: translateX(-60px); } }
+.td-qua { animation: tdQua 14s ease-in-out infinite alternate; }
+@keyframes tdQua { to { transform: translate(-30px, 10px); } }
+.td-lap { animation: tdLap 2.8s ease-in-out infinite alternate; }
+@keyframes tdLap { 0% { opacity: .75; } 40% { opacity: 1; } 55% { opacity: .82; } 100% { opacity: .95; } }
+.td-lua { transform-box: fill-box; transform-origin: 50% 100%; animation: tdLua .18s ease-in-out infinite alternate; }
+@keyframes tdLua { to { transform: scale(.9, 1.08) skewX(3deg); } }
+.td-dom { animation: tdLap 1.4s ease-in-out infinite alternate; }
+.td-khoi path { stroke-dasharray: 90; animation: tdKhoi 4s linear infinite; }
+.td-khoi path + path { animation-delay: -1.3s; } .td-khoi path + path + path { animation-delay: -2.6s; }
+@keyframes tdKhoi { from { stroke-dashoffset: 180; opacity: .8; } to { stroke-dashoffset: 0; opacity: 0; } }
+.td-tay { transform-box: fill-box; transform-origin: 50% 100%; animation: tdTay 5s ease-in-out infinite alternate; }
+@keyframes tdTay { 0% { transform: translateY(14px) rotate(-3deg); } 100% { transform: translateY(-4px) rotate(4deg); } }
+.td-suong { animation: tdMay 18s ease-in-out infinite alternate-reverse; }
+.td-bua { transform-box: view-box; transform-origin: 878px 0; animation: tdBua 4.5s ease-in-out infinite alternate; }
+@keyframes tdBua { from { transform: rotate(-2.5deg); } to { transform: rotate(2.5deg); } }
+.td-giot { animation: tdGiot 2.6s ease-in infinite; }
+@keyframes tdGiot { 0%, 30% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(170px); opacity: 0; } }
+
+/* máu chảy từ mép trên màn hình */
+.td-mau { position: absolute; left: 0; right: 0; top: 0; height: 0; pointer-events: none; z-index: 1; }
+.td-mau i { position: absolute; top: -4px; width: 7px; height: var(--d); border-radius: 0 0 5px 5px; transform-origin: 50% 0;
+  background: linear-gradient(#3A0202, #7A0806 70%, #9A100A); animation: tdNho 7s ease-in infinite; }
+.td-mau i::after { content: ""; position: absolute; left: -2.5px; bottom: -8px; width: 12px; height: 13px; border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; background: #8A0C08; }
+.td-mau i:nth-child(odd) { width: 5px; }
+@keyframes tdNho { 0% { transform: scaleY(.15); } 70% { transform: scaleY(1); } 100% { transform: scaleY(1.06); } }
+.td-mau::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 10px; background: linear-gradient(#2A0202, rgba(90,6,4,0)); }
+
+/* vàng mã bay ngang */
+.td-vang { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.td-vang i { position: absolute; width: 16px; height: 12px; background: #C8A040; border: 1px solid #6A4A10; box-shadow: inset 0 0 0 3px #D8B860;
+  left: -30px; animation: tdVang 16s linear infinite; opacity: .8; }
+.td-vang i:nth-child(1) { top: 140px; } .td-vang i:nth-child(2) { top: 260px; animation-delay: -4s; animation-duration: 20s; }
+.td-vang i:nth-child(3) { top: 360px; animation-delay: -9s; } .td-vang i:nth-child(4) { top: 200px; animation-delay: -12s; animation-duration: 22s; }
+.td-vang i:nth-child(5) { top: 420px; animation-delay: -6s; animation-duration: 18s; }
+@keyframes tdVang { 0% { transform: translate(0, 0) rotate(0); } 25% { transform: translate(260px, -30px) rotate(160deg); } 50% { transform: translate(520px, 20px) rotate(320deg); }
+  75% { transform: translate(780px, -20px) rotate(500deg); } 100% { transform: translate(1010px, 10px) rotate(700deg); } }
+
+/* khối chữ và nút */
+#title .tbox { left: 70px; padding-top: 40px !important; z-index: 2; padding: 26px 30px 26px 26px; margin-left: -26px;
+  background: linear-gradient(90deg, rgba(6,2,4,.82), rgba(6,2,4,.6) 70%, rgba(6,2,4,0)); border-radius: 4px; }
+#title h1 { font-size: 58px; white-space: nowrap; color: #EADCC4; letter-spacing: 1px; max-width: 520px;
+  text-shadow: 0 3px 0 #000, 0 0 2px #000, 0 0 22px rgba(200,30,20,.75), 0 0 48px rgba(140,10,8,.5); }
+.td-chumau { display: block; width: 420px; height: 56px; margin: -14px 0 -18px -4px; overflow: visible; }
+#title p { color: #D8B8A0; font-style: italic; margin-bottom: 14px; text-shadow: 0 1px 0 #000; }
+#title p small { color: #E89070; font-style: normal; }
+#title .seal { left: -6px; top: 0; width: 44px; height: 44px; padding: 0; display: flex; align-items: center; justify-content: center;
+  font-family: "Grenze Gotisch", serif; font-size: 14px; line-height: 1.05; color: #F8E8D0; background: #A8140C;
+  border: 3px double #F0C8A0; border-radius: 3px; transform: rotate(-10deg); box-shadow: 0 0 12px rgba(200,20,10,.6); }
+#title .tbox button { position: relative; min-width: 290px; min-height: 48px; padding: 8px 36px 8px 52px; text-align: left;
+  font-weight: 800; font-size: 16px; letter-spacing: .3px; color: #5A0A06; border-radius: 2px; border: 2px solid #9A1A10;
+  /* giấy bùa: cột chấm son mép phải như hàng ô tròn hai bên lá bùa, nét son dọc, ố vàng hai đầu */
+  background:
+    radial-gradient(circle, #C42A18 2.2px, transparent 2.8px) right 9px center / 8px 9px repeat-y,
+    linear-gradient(90deg, transparent calc(100% - 22px), #C42A18 calc(100% - 22px), #C42A18 calc(100% - 20.5px), transparent calc(100% - 20.5px)),
+    linear-gradient(90deg, rgba(140,90,16,.35), transparent 14%, transparent 86%, rgba(140,90,16,.35)),
+    linear-gradient(180deg, #F4D458, #E2AE2A);
+  box-shadow: inset 0 0 0 3px #F2CF52, inset 0 0 0 4px #B8241A, 0 3px 0 #2A0604, 0 6px 14px rgba(0,0,0,.5);
+  transition: transform .15s, box-shadow .15s; overflow: hidden; }
+/* ấn son vuông chứa chữ riêng của từng nút */
+#title .tbox button::before { content: attr(data-chu); position: absolute; left: 10px; top: 50%; width: 30px; height: 30px; margin-top: -15px;
+  display: flex; align-items: center; justify-content: center; font-family: "Ma Shan Zheng", serif; font-size: 21px; font-weight: 400; line-height: 1;
+  color: #FBE7B8; background: #B8241A; border: 1.5px solid #5A0A06; border-radius: 3px; transform: rotate(-5deg);
+  box-shadow: inset 0 0 0 2px rgba(251,231,184,.35); }
+#title .tbox button::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 0; pointer-events: none;
+  background: linear-gradient(90deg, rgba(120,8,4,.0), rgba(140,10,6,.35) 60%, rgba(160,14,8,.55)); transition: width .25s ease-out; }
+#title .tbox button:hover, #title .tbox button:focus-visible { transform: translateX(8px) rotate(-.6deg); }
+#title .tbox button:hover::after, #title .tbox button:focus-visible::after { width: 100%; }
+#title .tbox button:hover::before { animation: tdAn .5s ease-out; }
+@keyframes tdAn { 0% { transform: rotate(-5deg) scale(1.35); } 60% { transform: rotate(-8deg) scale(.92); } 100% { transform: rotate(-5deg) scale(1); } }
+#title .tbox button.primary { color: #F8E2B0; border-color: #2A0202; text-shadow: 0 1px 0 #000;
+  background: radial-gradient(circle, #F2CF52 2.2px, transparent 2.8px) right 9px center / 8px 9px repeat-y,
+    linear-gradient(90deg, transparent calc(100% - 22px), #E8B850 calc(100% - 22px), #E8B850 calc(100% - 20.5px), transparent calc(100% - 20.5px)),
+    linear-gradient(180deg, #9A1810, #6A0A06);
+  box-shadow: inset 0 0 0 3px #8A140C, inset 0 0 0 4px #E8B850, 0 3px 0 #1A0202, 0 0 18px rgba(200,20,10,.5); }
+#title .tbox button.primary::before { color: #8A140C; background: #F2CF52; border-color: #6A4A10; }
+#title .tbox button.music-toggle { min-height: 38px; font-size: 14px; opacity: .85; }
+
+/* màn chạm để bắt đầu */
+.tapstart { background: #050203; overflow: hidden; }
+.td-tapnen { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.tapstart > div { position: relative; z-index: 1; }
+.tapstart b { font-family: "Grenze Gotisch", serif; font-size: 34px; letter-spacing: 3px; color: #EADCC4; text-shadow: 0 0 18px rgba(200,20,10,.8), 0 2px 0 #000; }
+.tapstart small { display: block; margin-top: 6px; color: #A87868; letter-spacing: 1px; }
+
+/* bảng chọn chương cho hợp tông */
+#jump { background: linear-gradient(#2A1412, #140808); color: #EADCC4; border-color: #6A1A12; }
+#jump h2, #jump .list button { color: inherit; }
+#jump .list button { background: #3A1A16; border: 1px solid #7A2A1A; color: #F0DCC0; }
+#jump .list button:hover { background: #5A1A12; }
+
+@media (prefers-reduced-motion: reduce) {
+  .td-may, .td-qua, .td-lap, .td-lua, .td-dom, .td-khoi path, .td-tay, .td-suong, .td-bua, .td-giot, .td-mau i, .td-vang i { animation: none !important; }
+  .td-vang { display: none; }
+}
+
+/* hộp hỏi lại kiểu lá bùa */
+.td-hoi { position: absolute; inset: 0; z-index: 95; display: flex; align-items: center; justify-content: center; background: rgba(4,1,2,.72); }
+.td-hoi-giay { position: relative; width: 380px; padding: 26px 30px 20px 30px; text-align: center; color: #5A0A06; border-radius: 2px;
+  background: radial-gradient(circle, #C42A18 2.2px, transparent 2.8px) left 10px top 12px / 8px 10px repeat-y,
+    radial-gradient(circle, #C42A18 2.2px, transparent 2.8px) right 10px top 12px / 8px 10px repeat-y,
+    linear-gradient(180deg, #F4D458, #E2AE2A);
+  border: 2px solid #9A1A10; box-shadow: inset 0 0 0 4px #F2CF52, inset 0 0 0 5px #B8241A, 0 14px 40px rgba(0,0,0,.7); animation: tdHoi .25s ease-out; }
+@keyframes tdHoi { from { transform: translateY(-14px) rotate(-1.5deg); opacity: 0; } }
+.td-hoi-an { display: inline-flex; width: 46px; height: 46px; align-items: center; justify-content: center; font-style: normal; font-family: "Ma Shan Zheng", serif;
+  font-size: 32px; color: #FBE7B8; background: #B8241A; border-radius: 50%; border: 2px solid #5A0A06; box-shadow: 0 0 0 3px #F2CF52, 0 0 0 4px #B8241A; }
+.td-hoi-giay p { margin: 12px 0 16px; font-size: 16px; line-height: 1.5; font-weight: 600; }
+.td-hoi-giay p b { color: #A8140C; }
+.td-hoi-nut { display: flex; gap: 10px; justify-content: center; }
+.td-hoi-nut button { min-width: 130px; min-height: 44px; font-weight: 800; font-size: 15px; border-radius: 2px; cursor: pointer; }
+.td-hoi-nut .co { color: #F8E2B0; background: linear-gradient(#9A1810, #6A0A06); border: 2px solid #2A0202; box-shadow: inset 0 0 0 2px #E8B850; }
+.td-hoi-nut .khong { color: #5A0A06; background: #F8EAC0; border: 2px solid #9A1A10; }
+#title .td-hoi-giay p { color: #5A0A06; font-style: normal; text-shadow: none; }
