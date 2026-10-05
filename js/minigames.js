@@ -386,7 +386,7 @@ G.mg = {};
           var t = FX.tam(giay);
           FX.hat(t.x, t.y + 200, { n: 22, kieu: 'bui', tam: 230, goc: -Math.PI / 2, toa: .7, tre: .6, mau: ['#FFE7A0', '#FFB040', '#FF7A1A'] });
           FX.hat(t.x, t.y - 140, { n: 14, kieu: 'vang', tam: 70, mau: ['#FFF6D8', '#FFD06A'] });
-          setTimeout(function () { close(); p.classList.remove('buap'); res(); }, 1300);
+          setTimeout(function () { close(); $('mg').classList.remove('buap'); res(); }, 1300); // p ở đây là điểm bút, không phải bảng
         }
       }
       function toaDo(q) { // điểm trên giấy → toạ độ sân khấu (cho hạt bắn)
